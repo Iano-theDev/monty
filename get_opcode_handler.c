@@ -10,25 +10,32 @@
 void (*get_opcode_handler(const char *opcode))(stack_t **, unsigned int)
 {
 
-	if (!opcode)
-		return (NULL);
+	size_t len = 0, i = 0;
+	instruction_t ops[] = {
+		{"pall", op_pall},
+		{"pint", op_pint},
+		{"pop", op_pop},
+		{"swap", op_swap},
+		{"add", op_add},
+		{"nop", op_nop},
+		{"sub", op_sub},
+		{"div", op_div},
+		{"mul", op_mul},
+		{"mod", op_mod},
+		{"pchar", op_pchar},
+		{"pstr", op_pstr},
+		{"rotl", op_rotl},
+		{"rotr", op_rotr},
+		{"stack", op_stack},
+		{"queue", op_queue},
+	};
 
-	if (strcasecmp("pall", opcode) == 0)
-		return (op_pall);
+	len = sizeof(ops) / sizeof(instruction_t);
 
-	if (strcasecmp("pint", opcode) == 0)
-		return (op_pint);
+	while (i < len && strcasecmp(ops[i].opcode, opcode) != 0)
+		i++;
 
-	if (strcasecmp("pop", opcode) == 0)
-		return (op_pop);
-
-	if (strcasecmp("swap", opcode) == 0)
-		return (op_swap);
-
-	if (strcasecmp("add", opcode) == 0)
-		return (op_add);
-
-	if (strcasecmp("nop", opcode) == 0)
-		return (op_nop);
+	if (i < len)
+		return (ops[i].f);
 	return (NULL);
 }
