@@ -24,7 +24,7 @@ void (*get_opcode_handler(const char *opcode))(stack_t **, unsigned int)
 		{"mod", op_mod},
 		{"pchar", op_pchar},
 		/*{"pstr", op_pstr},*/
-		/*{"rotl", op_rotl},*/
+		{"rotl", op_rotl},
 		/*{"rotr", op_rotr},*/
 		{"stack", op_stack},
 		{"queue", op_queue},
