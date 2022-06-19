@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * op_all - print all the vales on the stack
+ * op_pall - print all the vales on the stack
  * @stack: the stack
  * @line_number: the number
  *
