@@ -13,8 +13,6 @@ int is_numeric(const char *str)
 
 	if (!str)
 		return (0);
-	if (str[0] == '#')
-		return(0);
 
 	if (str[0] == '-')
 		i++;
