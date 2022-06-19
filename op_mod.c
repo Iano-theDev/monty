@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * op_mod - computes the rest of the division of the second top element 
+ * op_mod - computes the rest of the division of the second top element
  * @stack: The stack
  * @line_number: An integer
  *

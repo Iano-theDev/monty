@@ -18,6 +18,7 @@ void run(FILE *fp)
 	ssize_t read = -1;
 	int int_arg = 0;
 	stack_t *stack = NULL;
+
 	void (*handler)(stack_t **, unsigned int);
 
 	while ((read = _getline(&line, &len, fp)) != -1)

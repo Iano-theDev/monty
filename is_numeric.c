@@ -11,7 +11,7 @@
 int is_numeric(const char *str)
 {
 	size_t i = 0;
-	
+
 	if (!str)
 		return (0);
 	while (str[i] && (isdigit(str[i]) > 0))
