@@ -21,7 +21,7 @@ void run(FILE *fp)
 
 	void (*handler)(stack_t **, unsigned int);
 
-	while ((read = _getline(&line, &len, fp)) != -1)
+	while ((read = _getline(&line, &len, fp)) != -1 && opcode[0] != '#')
 	{
 		line[read - 1] = '\0';
 		line_number += 1;
