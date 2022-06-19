@@ -27,9 +27,7 @@ void run(FILE *fp)
 		line_number += 1;
 		opcode = strtok(line, " ");
 		arg = strtok(NULL, " ");
-		if (!opcode && !arg)
-			continue;
-		if (opcode[0] == '#')
+		if (!opcode && !arg || opcode[0] == '#')
 			continue;
 		if (strcasecmp("push", opcode) == 0)
 		{
