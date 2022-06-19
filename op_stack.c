@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * op_stack - sets the format of the data to stack (LIFO)

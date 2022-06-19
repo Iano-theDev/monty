@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.h"
+#include "monty.h"
 
 /**
  *_realloc - realloc new memory space

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * op_queue - sets the format of the data to a queue (FIFO)

@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -75,4 +75,4 @@ void run(FILE *fp);
 
 int is_numeric(const char *str);
 
-#endif /*MAIN_H*/
+#endif /*MONTY_H*/

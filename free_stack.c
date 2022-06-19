@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * free_stack - clear the stack and free all elements
  * @stack: the stack

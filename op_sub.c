@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 #include <stdio.h>
 /**
  * op_sub - subtructs the top two elements of the stack
