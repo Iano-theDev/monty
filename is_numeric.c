@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include <ctype.h>
 #include <stdio.h>
 
 /**
@@ -21,7 +20,7 @@ int is_numeric(const char *str)
 	if (str[i] == '\0')
 		return (0);
 
-	while (str[i] && (isdigit(str[i]) > 0))
+	if (str[i] >= '0' && str[i] <= '9')
 		i++;
 
 	if (str[i] != '\0')
