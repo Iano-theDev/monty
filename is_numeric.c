@@ -14,6 +14,10 @@ int is_numeric(const char *str)
 
 	if (!str)
 		return (0);
+
+	if (str[0] == '-')
+		i++;
+
 	while (str[i] && (isdigit(str[i]) > 0))
 		i++;
 	if (str[i] != '\0')
