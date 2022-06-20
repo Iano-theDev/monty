@@ -36,7 +36,7 @@ void run(FILE *fp)
 			exit(EXIT_FAILURE);
 		}
 
-		handler(stack, line_number);
+		handler(&stack, line_number);
 	}
 
 	free_stack(&stack);
