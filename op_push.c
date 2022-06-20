@@ -16,7 +16,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	if (!is_numeric(arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		die(EXIT_FAILURE);
 	}
 
 	stack_push(stack, atoi(arg));

@@ -68,13 +68,9 @@ void op_queue(stack_t **stack, unsigned int line_number);
 
 void (*get_opcode_handler(const char *opcode))(stack_t **, unsigned int);
 
-ssize_t _getline(char **line, size_t *line_len, FILE *fp);
-
-void *_realloc(void *ptr, size_t n);
-
-void _memcpy(const void *dest, const void *src, const size_t n);
-
 void run(FILE *fp);
+
+void die(int status);
 
 int is_numeric(const char *str);
 

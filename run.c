@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+extern stack_t *stack;
 /**
  * run - run bytecode from file
  * @fp: A file pointer
@@ -15,7 +16,6 @@ void run(FILE *fp)
 	size_t len = 0;
 	unsigned int line_number = 0;
 	ssize_t read = -1;
-	stack_t *stack = NULL;
 
 	void (*handler)(stack_t **, unsigned int);
 
@@ -37,7 +37,8 @@ void run(FILE *fp)
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-			exit(EXIT_FAILURE);
+			die(EXIT_FAILURE);
 		}
 	}
+	die(EXIT_SUCCESS);
 }
