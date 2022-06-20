@@ -12,13 +12,10 @@ void free_stack(stack_t **stack)
 	if (!stack)
 		return;
 
-	freed = *stack;
-
 	while (*stack)
 	{
 		freed = *stack;
 		*stack = (*stack)->next;
-		(*stack)->prev = NULL;
 		free_stack_t(freed);
 	}
 }
