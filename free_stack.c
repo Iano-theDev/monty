@@ -7,15 +7,6 @@
  */
 void free_stack(stack_t **stack)
 {
-	stack_t *freed = NULL;
-
-	if (!stack)
-		return;
-
 	while (*stack)
-	{
-		freed = *stack;
-		*stack = (*stack)->next;
-		free_stack_t(freed);
-	}
+		free_stack_t(stack_pop(stack));
 }

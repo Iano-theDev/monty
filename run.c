@@ -39,5 +39,6 @@ void run(FILE *fp)
 		handler(&stack, line_number);
 	}
 
+	free(line);
 	free_stack(&stack);
 }

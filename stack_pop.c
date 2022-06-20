@@ -11,10 +11,9 @@ stack_t *stack_pop(stack_t **stack)
 {
 	stack_t *popped = NULL;
 
-	if (!stack || !(*stack))
+	if (!(*stack))
 		return (NULL);
 
-	/* 1->(X) */
 	popped = *stack;
 	*stack = popped->next;
 	popped->next = NULL;
