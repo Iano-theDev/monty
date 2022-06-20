@@ -21,9 +21,7 @@ void run(FILE *fp)
 	while ((read = getline(&line, &len, fp)) != -1)
 	{
 		line[read - 1] = '\0';
-
 		line_number += 1;
-
 		opcode = strtok(line, " ");
 
 		if (!opcode || opcode[0] == '#')
@@ -31,14 +29,15 @@ void run(FILE *fp)
 
 		handler = get_opcode_handler(opcode);
 
-		if (handler)
-			handler(&stack, line_number);
-		else
+		if (!handler)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			free_stack(&stack);
 			exit(EXIT_FAILURE);
 		}
+
+		handler(stack, line_number);
 	}
+
 	free_stack(&stack);
 }
