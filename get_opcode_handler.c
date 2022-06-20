@@ -12,6 +12,7 @@ void (*get_opcode_handler(const char *opcode))(stack_t **, unsigned int)
 
 	size_t len = 0, i = 0;
 	instruction_t ops[] = {
+		{"push", op_push},
 		{"pall", op_pall},
 		{"pint", op_pint},
 		{"pop", op_pop},
