@@ -70,8 +70,6 @@ void (*get_opcode_handler(const char *opcode))(stack_t **, unsigned int);
 
 void run(FILE *fp);
 
-void die(int status);
-
-int is_numeric(const char *str);
+int is_int(const char *str);
 
 #endif /*MONTY_H*/

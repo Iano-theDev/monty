@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * is_numeric - check if string is numeric
+ * is_int - check if string is numeric
  * @str: A string
  *
  * Return: 1 if numeric else 0
  */
-int is_numeric(const char *str)
+int is_int(const char *str)
 {
 	size_t i = 0;
 

@@ -13,11 +13,17 @@ void op_push(stack_t **stack, unsigned int line_number)
 {
 	char *arg = strtok(NULL, " ");
 
-	if (!is_numeric(arg))
+	if (!is_int(arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		die(EXIT_FAILURE);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
 	}
 
-	stack_push(stack, atoi(arg));
+	if (stack_push(stack, atoi(arg)) == NULL)
+	{
+		free_stack(stack);
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 }

@@ -15,17 +15,18 @@ void op_rotl(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 	tmp = *stack;
 
-	if (tmp && tmp->next)
+	if (tmp)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
-
-		tmp->next = *stack;
-
-		*stack = (*stack)->next;
-		(*stack)->prev = NULL;
-
-		tmp->next->prev = tmp;
-		tmp->next->next = NULL;
 	}
+
+	if (tmp == *stack)
+		return;
+
+	*stack = (*stack)->next;
+	tmp->next = (*stack)->prev;
+	(*stack)->prev = NULL;
+	tmp->next->next = NULL;
+	tmp->next->prev = tmp;
 }
